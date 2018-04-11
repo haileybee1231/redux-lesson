@@ -7,3 +7,10 @@ export const addToDo = (id, title) => (
         }
     }
 )
+
+export const removeToDo = (todo) => (
+    {
+        type: 'REMOVE-TODO',
+        payload: todo
+    }
+)

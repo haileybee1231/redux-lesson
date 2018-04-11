@@ -2,7 +2,8 @@
 A sample react-redux app.
 
 # to start
-# create webpack.config.js:
+create webpack.config.js:
+
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/react-client/src');
 var DIST_DIR = path.join(__dirname, '/react-client/dist');
@@ -27,7 +28,8 @@ module.exports = {
   }
 };
 
-#create .babelrc:
+create .babelrc:
+
 {
     "presets": [
         "env",
@@ -38,4 +40,4 @@ module.exports = {
     ]
 }
 
-#npm install, then npm run react-dev, then npm run server-dev
+then npm install, then npm run react-dev, then npm run server-dev

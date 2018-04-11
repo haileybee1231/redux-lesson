@@ -1,0 +1,37 @@
+{
+  "name": "redux-lesson",
+  "version": "1.0.0",
+  "description": "A sample react-redux app.",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack webpack.config.js -d --watch",
+    "server-dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haileybee1231/redux-lesson.git"
+  },
+  "author": "Hailey Bobella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haileybee1231/redux-lesson/issues"
+  },
+  "homepage": "https://github.com/haileybee1231/redux-lesson#readme",
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "express": "^4.16.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^2.2.1",
+    "webpack-cli": "^2.0.14"
+  }
+}

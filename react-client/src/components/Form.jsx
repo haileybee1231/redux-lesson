@@ -1,22 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { addToDo } from '../actions/';
+import uuidv4 from "uuid";
 
 class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: ''
+            title: ''        
         }
     }
     handleChange(event) {
-        this.setState({ [event.target.id]: event.target.value });
+        this.setState({ title: event.target.value });
     }
     handleSubmit(event) {
         event.preventDefault();
         const { title } = this.state;
-        const id = uuidv1();
-        this.props.addToDo({ title, id });
+        let id = uuidv4();
+        this.props.addToDo(id, title);
         this.setState({ title: "" });
     }
 
@@ -30,10 +32,10 @@ class Form extends React.Component {
                         className="form-control"
                         id="title"
                         value={this.state.title}
-                        onChange={this.handleChange}
+                        onChange={this.handleChange.bind(this)}
                     />
                 </div >
-                <button type="submit" className="btn btn-success btn-lg">
+                <button onClick={this.handleSubmit.bind(this)} className="btn btn-success btn-lg">
                 SAVE
                 </button>
             </form>
@@ -46,7 +48,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({ }, dispatch);
+    return bindActionCreators({ addToDo }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -1,3 +1,3 @@
-const DefaultState = {
-    test: 'test'
+export const DefaultState = {
+    todos:[]
 }

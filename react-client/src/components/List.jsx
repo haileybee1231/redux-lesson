@@ -2,16 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-const todos = [{id: 1, title: 'Learn Redux'}];
-
-const ConnectedList = (props) => {
+const List = (props) => {
     const handleClick = (e) => {
         const title = e.target.innerHTML;
     }
     
     return (
         <ul className="list-group list-group-flush">
-            {todos.map(todo => (
+            {props.todos.map(todo => (
                 <li className="list-group-item" key={todo.id}
                     onClick={handleClick}
                     >
@@ -23,12 +21,13 @@ const ConnectedList = (props) => {
 };
 
 const mapStateToProps = (state) => {
-return { };
+    return { 
+        todos: state.todos
+    };
 }
 
 const mapDispatchToProps = (dispatch) => {
-return { removeToDo: title => dispatch(removeToDo(title)) }
+return bindActionCreators({ }, dispatch);
 }
 
-const List = connect(mapStateToProps, mapDispatchToProps)(ConnectedList);
-export default List;
+export default connect(mapStateToProps, mapDispatchToProps)(List);
